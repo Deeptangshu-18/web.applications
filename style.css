@@ -84,3 +84,7 @@ legend{
 #f5{
   max-width :450px;
 }
+#background-video{
+  height: 100%;
+  width: 100%;
+}

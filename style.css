@@ -4,18 +4,25 @@ button{
     padding: 5px;
 }
 button:hover{
-    backdrop-filter: blur(50px);
-    transform: scale(1.25);
-    transition-duration: 1s;
+    -webkit-backdrop-filter: blur(50px);
+            backdrop-filter: blur(50px);
+    -webkit-transform: scale(1.25);
+        -ms-transform: scale(1.25);
+            transform: scale(1.25);
+    -webkit-transition-duration: 1s;
+         -o-transition-duration: 1s;
+            transition-duration: 1s;
     }
 fieldset{
-    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+            backdrop-filter: blur(15px);
     border-radius: 50px;
     border: 4px solid #00033b;
     padding: 10px;
     padding-left: 10px;
     padding-right: 10px;
-    box-shadow: 0 0 25px rgb(31, 255, 2);
+    -webkit-box-shadow: 0 0 25px rgb(31, 255, 2);
+            box-shadow: 0 0 25px rgb(31, 255, 2);
     max-height: 250px;
 }
 button::after {
@@ -30,6 +37,9 @@ button::after {
 }
 fieldset::before {
   content: "";
+  background: -o-linear-gradient(
+    45deg,
+    #6f00ff, #001eff, #00ccff, #00ff26,#f6ff00, #ff6200, #ff0000, #ff003c,#6f00ff);
   background: linear-gradient(
     45deg,
     #6f00ff, #001eff, #00ccff, #00ff26,#f6ff00, #ff6200, #ff0000, #ff003c,#6f00ff);
@@ -40,11 +50,20 @@ fieldset::before {
   z-index: -1;
   width: calc(100%);
   height:  calc(100%);
-  filter: blur(5px);
-  animation: glowing 20s linear infinite;
+  -webkit-filter: blur(5px);
+          filter: blur(5px);
+  -webkit-animation: glowing 20s linear infinite;
+          animation: glowing 20s linear infinite;
+  -webkit-transition: opacity .3s ease-in-out;
+  -o-transition: opacity .3s ease-in-out;
   transition: opacity .3s ease-in-out;
   border-radius: 50px;
   opacity: 0;
+}
+@-webkit-keyframes glowing {
+  0% {background-position: 0 0;}
+  50% {background-position: 400% 0;}
+  100% {background-position: 0 0;}
 }
 @keyframes glowing {
   0% {background-position: 0 0;}
@@ -58,8 +77,12 @@ fieldset:active:after {
   background: transparent;
 }
 fieldset:hover{
-    transform: scale(1.2);
-    transition-duration: 1s;
+    -webkit-transform: scale(1.2);
+        -ms-transform: scale(1.2);
+            transform: scale(1.2);
+    -webkit-transition-duration: 1s;
+         -o-transition-duration: 1s;
+            transition-duration: 1s;
 }
 div{
     padding-left: 25px;
